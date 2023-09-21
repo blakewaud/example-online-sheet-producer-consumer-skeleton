@@ -1,12 +1,9 @@
 tasks:
-  Split orders file:
-    robotTaskName: Split orders file
-  
-  Load and Process All Orders:
-    robotTaskName: Load and Process All Orders
+  Produce:
+    robotTaskName: Create work items from sheet
 
-  Mock Errors while Processing Orders:
-    shell: python -m robot --report NONE --outputdir output --logtitle "Task Log" --variable FAIL:True -t "Load and Process All Orders" consumer.robot
+  Consume:
+    robotTaskName: Load and Process All Orders
 
 artifactsDir: output
 condaConfigFile: conda.yaml

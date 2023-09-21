@@ -52,11 +52,11 @@ Open app
 
 Login
     [Documentation]    Logs into the app and confirms app is ready for input
-    ${credentials}=    Get Secret    target-app
     Log    NOT IMPLEMENTED    level=WARN
     RETURN    # delete this line when implementing
 
     # Possible implementation
+    ${credentials}=    Get Secret    target-app
     Input Text    user-name    ${credentials}[username]
     Input Password    password    ${credentials}[password]
     Submit Form
