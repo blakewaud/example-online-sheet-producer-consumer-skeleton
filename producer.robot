@@ -18,6 +18,11 @@ Create work items from sheet
     [Documentation]    Read orders from the sheet and create a work item for each order. Update
     ...    The sheet with status.
     ${table}=    Get Sheet As Table    ${SHEET_ID}
+    # Convert the table to a list of ordered dictionaries, where each ordered dictionary
+    # represents a row in the sheet. The keys are the column names. The use of ordered
+    # dictionaries is important, because the order of the columns is important and allows
+    # you to reference the columns by index as well as name. In this example, it is only used
+    # when updating the status.
     FOR    ${row}    IN    @{table}
         # If you must only use some columns, you can choose the columns you want to keep like so:
         # Keep In Dictionary    ${row}    Status    Order ID    Owner
