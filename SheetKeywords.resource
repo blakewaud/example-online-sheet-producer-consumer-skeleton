@@ -13,7 +13,7 @@ Update status
     [Arguments]    ${row}    ${sheet_id}    ${status}
     ${row_id}=    Get Row Id    ${row}
     Set To Dictionary    ${row}    Status    ${status}
-    Update Row    ${row}    ${sheet_id}
+    Update Row    ${row_id}    ${row}    ${sheet_id}
 
 Get Row Id
     [Documentation]    Get the row id from the row. Depending on the sheet provider, this may be

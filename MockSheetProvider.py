@@ -15,8 +15,8 @@ class MockSheetProvider:
         table = Tables().read_table_from_csv("mock.csv", True)
         return table
 
-    def update_row(self, row: dict, sheet_id: str) -> None:
+    def update_row(self, row_id: str, row: dict, sheet_id: str) -> None:
         """Updates a row in a mock table."""
         table = Tables().read_table_from_csv("mock.csv", True)
-        table.set_row(row["ROW_ID"], row)
+        table.set_row(row_id, row)
         Tables().write_table_to_csv(table, "mock.csv", True)
